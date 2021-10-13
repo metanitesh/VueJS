@@ -12,6 +12,7 @@
     <ul v-for="num in 5" :key="num">
       <li>{{num}}</li>
     </ul>
+    <button @click="flag = flag ? false : true">toggle</button>
   </div>
 </template>
 
