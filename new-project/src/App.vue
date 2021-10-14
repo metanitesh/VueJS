@@ -13,7 +13,19 @@
       <li>{{num}}</li>
     </ul>
     <button @click="flag = flag ? false : true">toggle</button>
+
+
+    <div>
+      <h1>
+         Counter
+         <button @click="increment">+</button>
+         <span>{{counter}}</span>
+         <button  @click="decrement">-</button>
+      </h1>
+      </div>
   </div>
+
+
 </template>
 
 <script>
@@ -25,7 +37,22 @@ export default {
       name:'Nitesh',
       data: ['run', 'walk', 'sleep'],
       userData: 'Hello world',
-      flag: true
+      flag: true,
+      counter: 0,
+    }
+  },
+  methods:{
+    disable(){
+
+    },
+    increment() {
+      this.counter++
+    },
+    decrement() {
+      if(this.counter <= 0){
+        return
+      }
+      this.counter--
     }
   }
 }
