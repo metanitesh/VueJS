@@ -1,37 +1,27 @@
 <template>
-  <h1>Vue3</h1>
+  <div>
+    <h1>{{counter}}</h1>
+    <button @click="counter++">Increment</button>
+  </div>
 </template>
 
 <script>
-const dinner = {
-  meal: "Pizza",
-};
 
-function track(target, prop) {
-  console.log(target, prop);
-}
-
-const handler = {
-  get: function (target, prop) {
-    track(target, prop);
-    return Reflect.get(...arguments);
-  },
-  set: function (target, key, value) {
-    console.log("in here");
-    console.log("set", target, key, value);
-    return Reflect.get(...arguments);
-  },
-};
-
-const proxy = new Proxy(dinner, handler);
-console.log(proxy.meal);
-proxy.meal = "Bomb";
 
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String,
+  data(){
+    return {
+      counter: 0
+    }
   },
+
+  watch:{
+    counter(){
+      console.log('changed counter')
+    }
+  }
+
+
 };
 </script>
 
