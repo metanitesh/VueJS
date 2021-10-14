@@ -16,8 +16,8 @@ export default {
   },
 
   watch:{
-    counter(){
-      console.log('changed counter')
+    counter(newValue, oldValue){
+      console.log('changed counter', oldValue, newValue)
     }
   }
 
