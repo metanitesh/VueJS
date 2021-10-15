@@ -1,15 +1,20 @@
 <template>
-  <TacoOrder msg="Welcome to Your Vue.js App"/>
+  <div>
+    <TacoOrder msg="Welcome to Your Vue.js App"/>
+    <Greet person="Sanjeev"/>
+  </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import TacoOrder from './components/TacoOrderWatcher.vue'
+import Greet from './components/Greet.vue'
 
 export default {
   name: 'App',
   components: {
-    TacoOrder
+    TacoOrder,
+    Greet
   }
 }
 </script>
