@@ -1,22 +1,48 @@
 <template>
   <div>
-    <TacoOrder msg="Welcome to Your Vue.js App"/>
-    <Greet person="Sanjeev"/>
+    <ul v-for="teacher in teachers" :key="teacher">
+      <teacher :name="teacher.name" :subject="teacher.subject" @removeTeacher="removeTeacher">
+        Teaches
+      </teacher>
+    </ul>
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import TacoOrder from './components/TacoOrderWatcher.vue'
-import Greet from './components/Greet.vue'
+// import TacoOrder from './components/TacoOrderWatcher.vue'
+// import Greet from './components/Greet.vue'
+import Teacher from "./components/Teacher.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    TacoOrder,
-    Greet
+    Teacher,
+  },
+  created(){
+    console.log('created')
+  },
+  data() {
+    return {
+      teachers: [
+        {
+          name: "Nitesh",
+          subject: "Js",
+        },
+        {
+          name: "Santu",
+          subject: "Python",
+        },
+      ],
+    };
+  },
+  methods:{
+    removeTeacher(name){
+      console.log(name)
+      this.teachers = this.teachers.filter(teacher => teacher.name !== name)
+    }
   }
-}
+};
 </script>
 
 <style>
