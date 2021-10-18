@@ -4,6 +4,7 @@
       <teacher :name="teacher.name" :subject="teacher.subject" @removeTeacher="removeTeacher">
         Teaches
       </teacher>
+      <!-- <div>{{this.$store.counter}}</div> -->
     </ul>
   </div>
 </template>
@@ -13,9 +14,11 @@
 // import TacoOrder from './components/TacoOrderWatcher.vue'
 // import Greet from './components/Greet.vue'
 import Teacher from "./components/Teacher.vue";
+import store from './store'
 
 export default {
   name: "App",
+  store: store,
   components: {
     Teacher,
   },
